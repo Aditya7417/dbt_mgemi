@@ -2,7 +2,7 @@
 -- This table is based on tables that are no longer being updated. As such, there is no need
 -- to update them on a regular basis.
 {{ config(materialized='table',
-          enabled=false,
+          enabled=True,
           tags=[],
           post_hook=[
             after_commit("create index if not exists {{ this.name }}__index_on_origin_order_id on {{ this }} (origin_order_id)"),
